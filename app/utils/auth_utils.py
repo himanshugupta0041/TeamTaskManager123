@@ -7,12 +7,18 @@ from ..config import settings
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
-def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(str(plain_password)[:72], hashed_password)
+# def verify_password(plain_password: str, hashed_password: str) -> bool:
+#     return pwd_context.verify(str(plain_password)[:72], hashed_password)
 
+
+# def get_password_hash(password: str) -> str:
+#     return pwd_context.hash(str(password)[:72])
+
+def verify_password(plain_password: str, stored_password: str) -> bool:
+    return plain_password == stored_password
 
 def get_password_hash(password: str) -> str:
-    return pwd_context.hash(str(password)[:72])
+    return password  # ❌ just returns plain password
 
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
