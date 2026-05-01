@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = Field(default=os.getenv("DATABASE_URL", ""))
     
     # JWT settings
-    SECRET_KEY: str = Field(default=os.getenv("SECRET_KEY", "your-secret-key-change-this"))
+    SECRET_KEY: str = Field(default=os.getenv("SECRET_KEY", "8xN!dQkLp#2mR9vF$7hJ@wE5yA&1cB*3z"))
     ALGORITHM: str = Field(default=os.getenv("ALGORITHM", "HS256"))
     ACCESS_TOKEN_EXPIRE_MINUTES: int = Field(default=int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "30")))
     
